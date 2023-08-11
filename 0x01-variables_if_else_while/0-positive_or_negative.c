@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * main() - prints an integer n and tells if it's neg, pos or zero.
+ * main - prints an integer n and tells if it's neg, pos or zero.
  *
  * Description: conditions of the main func < 0, > 0 or == 0.
  *
