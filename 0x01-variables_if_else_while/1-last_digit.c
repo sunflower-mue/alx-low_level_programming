@@ -31,6 +31,6 @@ int main(void)
 		if (lastDigit == 0)
 		{
 			printf("and is 0\n");
-		}	
+		}
 		return (0);
 	}
