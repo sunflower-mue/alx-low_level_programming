@@ -4,7 +4,7 @@
 
 /**
  * main() - prints an integer n and tells if it's neg, pos or zero.
- *
+ * Description: < 0, > 0 or == 0.
  * Return: 0 for success.
  */
 
