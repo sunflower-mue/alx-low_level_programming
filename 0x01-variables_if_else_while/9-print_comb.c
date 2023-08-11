@@ -20,6 +20,5 @@ int main(void)
 		putchar(' ');
 		putchar('0' + i);
 	}
-	putchar('\n');
 	return (0);
 }
