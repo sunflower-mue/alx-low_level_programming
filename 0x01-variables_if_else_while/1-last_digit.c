@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * main() - prints the last digit of n and tell if it is  > 5 or if == 0
+ * main - prints the last digit of n and tell if it is  > 5 or if == 0
  * or if < 6 and not zero.
  *
  * Return: 0 for success.
@@ -26,13 +26,11 @@ int main(void)
 			}
 		if (lastDigit < 6 && lastDigit != 0)
 		{
-			printf("and is less than 6 and not 6\n");
+			printf("and is less than 6 and not 0\n");
 			}
 		if (lastDigit == 0)
 		{
-			printf("and is zero\n");
-		}
-		
+			printf("and is 0\n");
+		}	
 		return (0);
-
 	}
