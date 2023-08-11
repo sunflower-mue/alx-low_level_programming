@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main prints all base 16 digits but lower case a-f.
+ * main -  prints all base 16 digits but lower case a-f.
  * base 16 digits are 0-9,A-F. A total of 16 digits.
  *base16 'a'+1 = b.
  * Return: 0 for succesful operation.
@@ -22,7 +22,7 @@ int main(void)
 		{
 			putchar('a' + i - 10);
 		}
-		putchar('\n');
 	}
+	putchar('\n');
 	return (0);
 }
