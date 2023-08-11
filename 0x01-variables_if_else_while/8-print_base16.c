@@ -15,7 +15,7 @@ int main(void)
 	{
 		if (i < 10)
 		{
-			putchat('0' + i);
+			putchar('0' + i);
 		}
 
 		else
