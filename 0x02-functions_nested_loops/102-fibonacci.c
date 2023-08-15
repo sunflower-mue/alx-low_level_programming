@@ -1,31 +1,30 @@
 #include <stdio.h>
 
 /**
- *main - fibonacci seq - first 50.
- *Return: Always 0 exec.
+ *main - T_50 fibonacci seq.
+ *Return: Always 0 for exec.
  */
-
 int main(void)
 {
-	int i;
-	unsigned long int j, k, next, sum;
+	long int i, j, k, next;
 
 	j = 1;
-	k = 2;
-	sum = 0;
 
-	for (i = 1; i <= 33; ++i)
+	k = 2;
+
+	for (i = 1; i <= 50; i++)
 	{
-		if (j < 4000000 && (j % 2) == 0)
+		if (j != 20365011074)
 		{
-			sum = sum + j;
+			printf("%ld, ", j);
+		} else
+		{
+			printf("%ld\n", j);
 		}
 		next = j + k;
 		j = k;
 		k = next;
 	}
-
-	printf("%lu\n", sum);
 
 	return (0);
 }
