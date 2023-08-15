@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
- *
  * main - prints "_puthar".
  *
  * Description: prototype for putchar. Named _putchar and given.
