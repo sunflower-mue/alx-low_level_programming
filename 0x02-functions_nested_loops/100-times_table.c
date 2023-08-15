@@ -17,7 +17,7 @@ void print_times_table(int n)
 			_putchar(48);
 			for (j = 1; j <= n; j++)
 			{
-				_putchar(', ');
+				_putchar(',');
 				_putchar(' ');
 
 				mul = i * j;
