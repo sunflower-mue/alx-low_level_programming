@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_diagonal - printing a diagonal line.
- * @n: param of type int. Number of char \ is printed.
+ * print_diagonal - printing a diag line.
+ * @n: int param, number of time / is printed.
 */
 
 void print_diagonal(int n)
