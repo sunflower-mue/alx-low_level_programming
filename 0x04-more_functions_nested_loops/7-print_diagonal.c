@@ -1,24 +1,27 @@
 #include "main.h"
 
 /**
- * print_diagonal - printing a diag line.
- * @n: int param, number of time / is printed.
+*print_diagonal - prints diagonal.
+*@n: param of type int
+*Return: returns nothing.
 */
 
 void print_diagonal(int n)
 {
 	int i, j;
-
-	if (n <= 0)
-		_putchar('\n');
-	else
+	
+	if (n > 0)
 	{
-		for (i = 1; i <= n; i++)
+		for (i = 0; i < n; i++)
 		{
-			for (j = 1; j <= i j++)
+			for (j = 0; j < i; j++)
 				_putchar(' ');
-			_putchar(92);
+			_putchar('\\');
+			
+			if (i == (n - 1))
+				continue;
 			_putchar('\n');
 		}
 	}
+	_putchar('\n');
 }
