@@ -3,9 +3,9 @@
 /**
  *print_line - printing a straight line.
  *
- * @n: param of int type. 
- * specifies how many times _ should be printed
- * Return: void for nothing.
+ *@n: param of int type. 
+ *specifies how many times _ should be printed
+ *Return: void for nothing.
 */
 
 void print_line(int n)
