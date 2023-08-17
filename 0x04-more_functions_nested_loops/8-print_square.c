@@ -1,29 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_square - prints a square.
- *@size: param of type int.
- * Return: void is nothing.
+ * print_square - Print squar.
+ * @n: parameter.
+ * Return: nothing.
  */
-
-void print_square(int size)
+void print_square(int n)
 {
 	int i;
 	int j;
-	
-	if (size > 0)
+
+	for (i = 0; i < n; i++)
 	{
-		for (i = 0; i < size; i++)
+		for (j = 0; j < n; j++)
 		{
-			for (k = 0; k < size; k++)
-			{
-				_putchar (35);
-			}
-			_putchar ('\n');
+			_putchar('#');
 		}
+		_putchar('\n');
 	}
-	else
+	if (n <= 0)
 	{
-		_putchar ('\n');
+		_putchar('\n');
 	}
 }
