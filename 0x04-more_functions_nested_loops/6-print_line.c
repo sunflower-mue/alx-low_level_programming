@@ -1,14 +1,16 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
-*print_line - printing a straight line.
-*@n:parameter of type int.
-*Return:returns nothing, void type.
-*/
-
+ * print_line - based on int n, print dash for line.
+ * @n : The number of '_' characters toprint
+ * Return: no return type
+ */
 void print_line(int n)
 {
-	while (n-- > 0)
+	int i;
+
+	for (i = 0; i < n; i++)
 	{
 		_putchar('_');
 	}
