@@ -3,7 +3,7 @@
  *
  * @c:parameter of type char
  *
- * Return: 1 if its uppercase, 0 if not
+ * Return: 1 if upper, 0 otherwide.
 */
 
 int _isupper(int c)
