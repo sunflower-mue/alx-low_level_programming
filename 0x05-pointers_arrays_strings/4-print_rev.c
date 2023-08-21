@@ -10,10 +10,6 @@
 
 void print_rev(char *s)
 {
-	if (s == NULL)
-	{
-		return; /* Handle NULL pointer*/
-	}
 
 	int i;
 	int length = 0;
