@@ -8,7 +8,7 @@
  * Return: void.
 */
 
-void print_rev(const char *s)
+void print_rev(char *s)
 {
 	if (s == NULL)
 	{
