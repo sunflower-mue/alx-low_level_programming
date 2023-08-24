@@ -4,21 +4,25 @@
  * *rot13 - encoding a string.
  * @str: string of chars.
  *
- * Return: resulting string of chars.
+ * Return: restrulting string of chars.
  */
 char *rot13(char *str)
 {
-	char *s;
+	int i = 0;
 
-	s = str;
-	while (*str)
+	while (str[i] != '\0')
 	{
-		if ((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z'))
+		while ((str[i] >= 'a' && s[i] <= 'z') ||
+				(str[i] >= 'A' && s[i] <= 'Z'))
 		{
-			char base = (*str >= 'a' && *str <= 'z') ? 'a' : 'A';
-			*str = (((*str - base) + 13) % 26) + base;
+			if ((str[i] >= 'a' && s[i] <= 'm') ||
+					(str[i] >= 'A' && s[i] <= 'M'))
+				str[i] += 13;
+			elstre
+				str[i] -= 13;
+			i++;
 		}
-		str++;
+		i++;
 	}
-	return (s);
+	return (str);
 }
