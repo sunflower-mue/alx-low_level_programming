@@ -1,6 +1,32 @@
 #include "main.h"
 
 /**
+ * reverse_string - rev a string.
+ * @n: char parameter.
+ * Return: nothing.
+ */
+
+void reverse_string(char *n)
+{
+	int i = 0;
+	int j = 0;
+	char temp;
+
+	while (*(n + i) != '\0')
+	{
+		i++;
+	}
+	i--;
+
+	for (j = 0; j < i; j++, i--)
+	{
+		temp = *(n + j);
+		*(n + j) = *(n + i);
+		*(n + i) = temp;
+	}
+}
+
+/**
  * infinite_add - adds two numbers.
  * @n1: first number as a string
  * @n2: second number as a string
@@ -10,35 +36,42 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i, j, k, carry, sum;
+	int of = 0, i = 0, j = 0, dig = 0;
+	int val1 = 0, val2 = 0, tt = 0;
 
-	for (i = 0; n1[i]; i++)
-		;
-	for (j = 0; n2[j]; j++)
-		;
-	if (i > size_r || j > size_r)
-		return (NULL);
-	carry = 0;
-	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	while (*(n1 + i) != '\0')
+		i++;
+	while (*(n2 + j) != '\0')
+		j++;
+	i--;
+	j--;
+	if (j >= size_r || i >= size_r)
+		return (0);
+	while (j >= 0 || i >= 0 || of == 1)
 	{
-		sum = carry;
-		if (i >= 0)
-			sum += n1[i] - '0';
-		if (j >= 0)
-			sum += n2[j] - '0';
-	carry = sum / 10;
-	r[k] = sum % 10 + '0';
+		if (i < 0)
+			val1 = 0;
+		else
+			val1 = *(n1 + i) - '0';
+		if (j < 0)
+			val2 = 0;
+		else
+			val2 = *(n2 + j) - '0';
+		tt = val1 + val2 + of;
+		if (tt >= 10)
+			of = 1;
+		else
+			of = 0;
+		if (dig >= (size_r - 1))
+			return (0);
+		*(r + dig) = (tt % 10) + '0';
+		dig++;
+		j--;
+		i--;
 	}
-	r[k] = '\0';
-	if (i >= 0 || j >= 0 || carry)
-		return (NULL);
-	for (k -= 1, i = 0; i < k; k--, i++)
-	{
-		char temp = r[k];
-
-		r[k] = r[i];
-		r[i] = temp;
-	}
+	if (dig == size_r)
+		return (0);
+	*(r + dig) = '\0';
+	reverse_string(r);
 	return (r);
 }
-
