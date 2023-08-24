@@ -8,6 +8,9 @@
  */
 char *rot13(char *str)
 {
+	char *s;
+
+	s = str;
 	while (*str)
 	{
 		if ((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z'))
@@ -17,5 +20,5 @@ char *rot13(char *str)
 		}
 		str++;
 	}
-	return (str);
+	return (s);
 }
