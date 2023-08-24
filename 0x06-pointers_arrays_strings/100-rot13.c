@@ -1,29 +1,21 @@
 #include "main.h"
 
 /**
- * rot13 - encoding a string.
- * @s: string of chars.
+ * *rot13 - encoding a string.
+ * @str: string of chars.
  *
  * Return: resulting string of chars.
  */
-char *rot13(char *s)
+char *rot13(char *str)
 {
-	int i, j;
-
-	char x[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char y[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (*str)
 	{
-		for (j = 0; a[j] != '\0'; j++)
+		if ((*str >= 'a' && *str <= 'z') || (*str >= 'A' && *str <= 'Z'))
 		{
-			if (s[i] == x[j])
-			{
-				s[i] = y[j];
-				break;
-			}
+			char base = (*str >= 'a' && *str <= 'z') ? 'a' : 'A';
+			*str = (((*str - base) + 13) % 26) + base;
 		}
+		str++;
 	}
-
-	return (s);
+	return (str);
 }
