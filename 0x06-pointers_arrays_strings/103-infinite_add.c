@@ -1,57 +1,44 @@
 #include "main.h"
 
 /**
-* infinite_add - add two numberbers.
-* numberbers >= 0 always and not null.
-* string contains only numberbers.i
-* If result can be stored in the buffer, return pointer to the outcome.
-* else, returns 0.
-*
-*@n1:first numberber param.
-*@n2:second numberber param.
-*@r: result holder.
-*@size_r: size of buffer.
-*Return: pointer to r.
-*/
-
+ * infinite_add - adds two numbers.
+ * @n1: first number as a string
+ * @n2: second number as a string
+ * @r: buffer to store the result
+ * @size_r: size of the result buffer
+ * Returns: a pointer to the result string or NULL.
+ */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
+	int i, j, k, carry, sum;
+
+	for (i = 0; n1[i]; i++)
+		;
+	for (j = 0; n2[j]; j++)
+		;
+	if (i > size_r || j > size_r)
+		return (NULL);
+	carry = 0;
+	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	{
+		sum = carry;
+		if (i >= 0)
+			sum += n1[i] - '0';
+		if (j >= 0)
+			sum += n2[j] - '0';
+	carry = sum / 10;
+	r[k] = sum % 10 + '0';
+	}
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || carry)
+		return (NULL);
+	for (k -= 1, i = 0; i < k; k--, i++)
+	{
+		char temp = r[k];
+
+		r[k] = r[i];
+		r[i] = temp;
+	}
+	return (r);
 }
 
-/**
-* add_strings - Add two numberbers.
-* @n1: first numberber param.
-* @n2: second numberber param.
-* @r: result holder.
-* @r_index: index of buffer.
-*
-* Return: pointer to result, if it can be stored in buffer,
-*         else, 0.
-*/
-
-char *add_strings(char *n1, char *n2, char *r, int r_index)
-{
-	int number, t = 0;
-
-	for (; *n1 && *n2; n1--, n2--, r_index--)
-	{
-		number = (*n1 - '0') + (*n2 - '0');
-		number += t;
-		*(r + r_index) = (number % 10) + '0';
-		t = number / 10;
-	}
-
-	for (; *n1; n1--; r_index++)
-	{
-		number = *(n1 - '0') + t;
-		*(r + r_index) = (number % 10) + '0';
-		t = number / 10;
-	}
-
-	for (; *n2; n2--;  r_index--)
-	{
-		number = (*n2 - '0') + t;
-		*(r + r_index) = (number % 10) + '0';
-		t = number / 10;
-	}
-}
