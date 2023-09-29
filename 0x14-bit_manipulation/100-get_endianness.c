@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * get_endianness - checks endianness.
