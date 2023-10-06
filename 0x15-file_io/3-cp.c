@@ -31,8 +31,10 @@ void _exitp(int code, const char *filename, int fd)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 			exit(100);
 		default:
-		exit(code);
+			break;
 	}
+
+	exit(code);
 }
 
 /**
